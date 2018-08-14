@@ -180,6 +180,9 @@ return [
         // Our packages
         Unisharp\Ckeditor\ServiceProvider::class,
 
+        // Proveders
+        App\Providers\BlogServiceProvider::class,
+
     ],
 
     /*
