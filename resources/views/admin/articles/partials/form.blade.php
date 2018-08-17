@@ -13,7 +13,7 @@
 <input type="text" class="form-control" name="title" placeholder="Заголовок новости" value="{{$article->title or ""}}" required>
 
 <label for="">Slug (Уникальное значение)</label>
-<input class="form-control" type="text" name="slug" placeholder="Автоматическая генерация" value="{{$article->slug or ""}}" readonly="">
+<input class="form-control" type="text" name="slug" placeholder="Автоматическая генерация" value="{{$article->slug or ""}}" required>
 
 <label for="">Родительская категория</label>
 <select class="form-control" name="categories[]" multiple="">
@@ -26,7 +26,10 @@
 <label for="">Полное описание</label>
 <textarea class="form-control" id="description" name="description">{{$article->description or ""}}</textarea>
 
+<label for="">Ссылка на видео</label>
+<input class="form-control" id="video" name="video" value="{{$article->video or ""}}">
 <hr />
+
 
 <label for="">Мета заголовок</label>
 <input type="text" class="form-control" name="meta_title" placeholder="Мета заголовок" value="{{$article->meta_title or ""}}">

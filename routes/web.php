@@ -12,7 +12,8 @@
 */
 
 Route::get('/blog/category/{slug?}', 'BlogController@category')->name('category');
-Route::get('/blog/article/{slug?}', 'BlogController@article')->name('article');
+Route::get('/blog/article/{id?}', 'BlogController@article')->name('article');
+
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth'] ], function(){
      Route::get('/', 'DashboardController@dashboard')->name('admin.index');
@@ -24,7 +25,23 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 Route::get('/', function () {
     return view('blog.home');
 });
+Route::get('/about',[
+  'uses'=> 'AboutController@create'
+
+])->name('about');
+Route::get('/contact', [
+  'uses'=> 'ContactMessageController@create'
+
+])->name('contact');
+
+Route::post('/contact', [
+  'uses' => 'ContactMessageController@store',
+  'as '=> 'contact.store'
+
+])->name('contact.store');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/blog/article/{article}/comments','CommentsController@store');

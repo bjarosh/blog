@@ -20,8 +20,14 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 @include('layouts.top_menu', ['categories' => $categories])
+                <!-- Authentication Links -->
+                    <li><a href="{{ route('about') }}">Обо мне</a></li>
+                    <li><a href="{{ route('contact') }}">Контакты</a></li>
             </ul>
+            <ul class="nav navbar-nav ">
 
+
+            </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
@@ -53,3 +59,23 @@
         </div>
     </div>
 </nav>
+<div class="navbar navbar-default navbar-fixed-bottom" style=" margin-top: 10%">
+  <div class="row" >
+    <div class="col-md-12 col-md-offset-4">
+      <ul class="nav navbar-nav">
+          @include('layouts.top_menu', ['categories' => $categories])
+          <!-- Authentication Links -->
+              <li><a href="{{ route('about') }}">Обо мне</a></li>
+              <li><a href="{{ route('contact') }}">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="col-md-12 col-md-offset-4">
+      <p class="navbar-text">
+       © 2023 Здоровое питание. Сайт создан SmartAppTech
+    </p>
+    </div>
+  </div>
+
+
+
+</div>

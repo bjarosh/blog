@@ -17,9 +17,9 @@ class BlogController extends Controller
       'articles' => $category->articles()->where('published', 1)->paginate(12)
     ]);
   }
-  public function article($slug) {
+  public function article($id) {
     	return view('blog.article', [
-    		'article' => Article::where('slug', $slug)->first()
+    		'article' => Article::where('id', $id)->first()
     	]);
     }
 
